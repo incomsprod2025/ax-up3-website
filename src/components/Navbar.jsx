@@ -35,9 +35,9 @@ const Navbar = () => {
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
             <div className="container nav-container">
-                <Link to="/" className="logo" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.8rem' }}>
-                    <img src="/images/logo.png" alt="Logo AX-UP3" style={{ height: '45px', width: 'auto', objectFit: 'contain' }} />
-                    <div className="logo-text">AX-UP3<span>.</span> <span style={{ fontSize: '1rem', fontWeight: '500', letterSpacing: '2px' }}>GROUP</span></div>
+                <Link to="/" className="logo" onClick={closeMenu} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.3rem' }}>
+                    <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="Logo AX-UP3" style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
+                    <div className="logo-text">AX-UP3<span>.</span> <span style={{ fontSize: '0.8rem', fontWeight: '500', letterSpacing: '2px' }}>GROUP</span></div>
                 </Link>
                 <ul className={`nav-links ${menuActive ? 'active' : ''}`}>
                     <li><Link to="/" className={`nav-item ${currentPath === '/' ? 'active' : ''}`} onClick={closeMenu}>Accueil</Link></li>

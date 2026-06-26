@@ -4,7 +4,10 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-grid">
                     <div className="footer-col">
-                        <a href="/" className="logo" style={{ display: 'block', marginBottom: '2.5rem' }}>AX-UP3<span>.</span></a>
+                        <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.3rem', marginBottom: '2.5rem' }}>
+                            <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="Logo AX-UP3" style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
+                            <div className="logo-text">AX-UP3<span>.</span> <span style={{ fontSize: '0.8rem', fontWeight: '500', letterSpacing: '2px' }}>GROUP</span></div>
+                        </a>
                         <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: '1.8' }}>Nous construisons l'excellence africaine
                             par l'ingénierie de la culture d'entreprise et le coaching de haute posture.</p>
                     </div>
