@@ -125,10 +125,10 @@ const About = () => {
             <section className="section-padding" style={{ background: 'var(--bg-offwhite)' }}>
                 <div className="container">
                     <h2 className="section-title">L'Élite en Action</h2>
-                    <div className="gallery-grid" style={{ marginTop: '4rem' }}>
-                        <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?q=80&amp;w=2071&amp;auto=format&amp;fit=crop" style={{ height: '400px', objectFit: 'cover', borderRadius: '8px', width: '100%' }} className="zoom-in" alt="Meeting Ivory Coast" />
-                        <img src="https://images.unsplash.com/photo-1573163060274-12462319ef11?q=80&amp;w=2069&amp;auto=format&amp;fit=crop" style={{ height: '400px', objectFit: 'cover', borderRadius: '8px', width: '100%' }} className="zoom-in delay-1" alt="Business African Women" />
-                        <img src="https://images.unsplash.com/photo-1553028495-1a7c8585930e?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" style={{ height: '400px', objectFit: 'cover', borderRadius: '8px', width: '100%' }} className="zoom-in delay-2" alt="Negotiation African Context" />
+                    <div className="stats-grid" style={{ marginTop: '4rem', gridTemplateColumns: 'repeat(3, 1fr)' }}>
+                        <img src={`${import.meta.env.BASE_URL}images/elite_action_1.png`} style={{ height: '400px', objectFit: 'cover', borderRadius: '8px', width: '100%' }} className="zoom-in" alt="African Leadership Strategy" />
+                        <img src={`${import.meta.env.BASE_URL}images/elite_action_2.png`} style={{ height: '400px', objectFit: 'cover', borderRadius: '8px', width: '100%' }} className="zoom-in delay-1" alt="Business African Women" />
+                        <img src={`${import.meta.env.BASE_URL}images/elite_action_3.png`} style={{ height: '400px', objectFit: 'cover', borderRadius: '8px', width: '100%' }} className="zoom-in delay-2" alt="African Professional Negotiation" />
                     </div>
                 </div>
             </section>

@@ -291,6 +291,12 @@ img {
 }
 
 /* Grids & Cards */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
 .advantages-grid,
 .services-grid,
 .footer-grid {
@@ -300,6 +306,12 @@ img {
 
 .advantages-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.stats-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .advantage-card {
@@ -571,6 +583,10 @@ img {
         gap: 3rem;
     }
 
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
     .process-grid {
         grid-template-columns: 1fr;
     }
@@ -678,6 +694,10 @@ img {
 
     .grid-form {
         grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr !important;
     }
 
     .responsive-list {

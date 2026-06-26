@@ -97,7 +97,7 @@ const Home = () => {
                     </div>
                     <div className="advantages-grid">
                         <div className="service-card fade-right">
-                            <div style={{ height: '250px', backgroundImage: `url('https://images.unsplash.com/photo-1573163273842-491176bc039c?q=80&w=2069&auto=format&fit=crop')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                            <div style={{ height: '250px', backgroundImage: `url('${import.meta.env.BASE_URL}images/african_professionals_strategy.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                             <div style={{ padding: '3rem 2rem', textAlign: 'center' }}>
                                 <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>Négociation &amp; Stratégie</h3>
                                 <p style={{ color: 'var(--text-light)', marginBottom: '1.5rem' }}>Devenez maître de votre destin professionnel à travers des codes de communication d'impact.</p>
@@ -106,7 +106,7 @@ const Home = () => {
                         </div>
 
                         <div className="service-card zoom-in delay-1">
-                            <div style={{ height: '250px', backgroundImage: `url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                            <div style={{ height: '250px', backgroundImage: `url('${import.meta.env.BASE_URL}images/african_professionals_culture.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                             <div style={{ padding: '3rem 2rem', textAlign: 'center' }}>
                                 <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>ADN &amp; Culture</h3>
                                 <p style={{ color: 'var(--text-light)', marginBottom: '1.5rem' }}>Un système de valeurs partagées pour harmoniser les compétences à l'échelle mondiale.</p>
@@ -115,7 +115,7 @@ const Home = () => {
                         </div>
 
                         <div className="service-card fade-left delay-2">
-                            <div style={{ height: '250px', backgroundImage: `url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                            <div style={{ height: '250px', backgroundImage: `url('${import.meta.env.BASE_URL}images/african_professionals_incubation.png')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                             <div style={{ padding: '3rem 2rem', textAlign: 'center' }}>
                                 <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>Incubation Élite</h3>
                                 <p style={{ color: 'var(--text-light)', marginBottom: '1.5rem' }}>Une véritable pépinière pour l'innovation, la création et le renforcement des capacités collectives.</p>
@@ -136,11 +136,11 @@ const Home = () => {
                             <p style={{ fontSize: '1.2rem', lineHeight: '2', color: 'rgba(255,255,255,0.8)', marginBottom: '3rem' }}>
                                 Vivez 02 jours d'immersion totale dédiés à la **Certification &amp; Professionnalisation** des chefs d'entreprise. Une engineering pédagogique unique pour développer votre art oratoire, votre négociation managériale et votre posture de leader d'exception.
                             </p>
-                            <ul className="responsive-list" style={{ marginBottom: '4rem', display: 'grid', gap: '1.5rem' }}>
-                                <li><i className="fas fa-check gold-text"></i> Intelligence Artificielle Pro</li>
-                                <li><i className="fas fa-check gold-text"></i> Coaching de Posture</li>
-                                <li><i className="fas fa-check gold-text"></i> Négociation Stratégique</li>
-                                <li><i className="fas fa-check gold-text"></i> Obligation de Résultat</li>
+                            <ul className="responsive-list" style={{ marginBottom: '4rem', listStyle: 'none', padding: 0, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+                                <li><i className="fas fa-check gold-text" style={{ marginRight: '10px' }}></i> Intelligence Artificielle Pro</li>
+                                <li><i className="fas fa-check gold-text" style={{ marginRight: '10px' }}></i> Coaching de Posture</li>
+                                <li><i className="fas fa-check gold-text" style={{ marginRight: '10px' }}></i> Négociation Stratégique</li>
+                                <li><i className="fas fa-check gold-text" style={{ marginRight: '10px' }}></i> Obligation de Résultat</li>
                             </ul>
                             <div style={{ display: 'flex', gap: '2rem' }}>
                                 <Link to="/weekend-vip" className="btn btn-primary" style={{ padding: '1.5rem 3rem' }}>Candidatez à la Bourse</Link>
@@ -148,7 +148,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="fade-left zoom-in" style={{ position: 'relative' }}>
-                            <img src="/assets/academy-real.jpg" style={{ width: '100%', borderRadius: '10px', boxShadow: '0 50px 100px rgba(0,0,0,0.5)' }} alt="Academy VIP Session Réelle" />
+                            <img src={`${import.meta.env.BASE_URL}images/academy-real.png`} style={{ width: '100%', borderRadius: '10px', boxShadow: '0 50px 100px rgba(0,0,0,0.5)' }} alt="Academy VIP Session Réelle" />
                             <div style={{ position: 'absolute', bottom: '-30px', left: '-30px', background: 'var(--secondary-color)', color: 'var(--primary-color)', padding: '2rem', borderRadius: '4px', fontWeight: '900', fontSize: '1.5rem', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
                                 SESSION 2026<br />OUVERTE
                             </div>
@@ -174,7 +174,7 @@ const Home = () => {
             <section className="section-padding">
                 <div className="container">
                     <h2 className="section-title">Une Méthode de Précision</h2>
-                    <div className="process-grid" style={{ marginTop: '5rem' }}>
+                    <div className="stats-grid" style={{ marginTop: '5rem' }}>
                         <div className="process-item fade-up">
                             <div className="process-number">I</div>
                             <h3 style={{ marginTop: '1rem' }}>IMMERSION</h3>
@@ -202,7 +202,7 @@ const Home = () => {
             {/* Stats Counter Section */}
             <section className="section-padding" style={{ background: 'var(--primary-color)', color: 'white' }}>
                 <div className="container">
-                    <div className="advantages-grid" style={{ textAlign: 'center' }}>
+                    <div className="stats-grid" style={{ textAlign: 'center' }}>
                         <div className="stat-item fade-up">
                             <h2 className="gold-text counter" data-target="15" style={{ fontSize: '4rem' }}>0</h2>
                             <p style={{ textTransform: 'uppercase', letterSpacing: '2px', fontWeight: '600' }}>Années d'Expertise</p>

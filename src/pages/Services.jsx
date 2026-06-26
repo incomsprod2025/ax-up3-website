@@ -108,7 +108,7 @@ const Services = () => {
                     <div className="text-center zoom-in" style={{ marginBottom: '5rem', textAlign: 'center' }}>
                         <h2 className="section-title">Pôles de Coaching Stratégique</h2>
                     </div>
-                    <div className="advantages-grid" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+                    <div className="stats-grid" style={{ maxWidth: '1200px', margin: '0 auto' }}>
                         <div className="advantage-card fade-up" style={{ textAlign: 'left' }}>
                             <i className="fas fa-user-tie gold-text" style={{ fontSize: '3rem', marginBottom: '1.5rem' }}></i>
                             <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>Management Stratégique</h3>

@@ -30,7 +30,7 @@ const WeekendVip = () => {
         <main style={{ backgroundColor: '#ffffff' }}>
             {/* Hero Section */}
             <header className="page-header" style={{ height: '75vh', backgroundImage: `linear-gradient(rgba(5, 16, 36, 0.8), rgba(5, 16, 36, 0.8)), url('https://images.unsplash.com/photo-1515169067868-5387ec356754?q=80&w=2070&auto=format&fit=crop')`, backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div className="container" style={{ position: 'relative', zIndex: '2', textAlign: 'center', paddingTop: '80px', paddingBottom: '10vh' }}>
+                <div className="container" style={{ position: 'relative', zIndex: '2', textAlign: 'center', paddingTop: '80px', paddingBottom: '20vh' }}>
                     <div className="zoom-in">
                         <span className="gold-text" style={{ fontWeight: '700', letterSpacing: '5px', fontSize: '0.9rem', textTransform: 'uppercase' }}>MASTER CLASS D'EXCEPTION</span>
                         <h1 className="page-title" style={{ marginTop: '1.5rem' }}>WEEKEND ACADEMY VIP</h1>
