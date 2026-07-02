@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Serve the static files built by Vite
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -12,6 +11,12 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Serveur Node.js démarré sur le port ${PORT}`);
-});
+// Official Phusion Passenger compatibility for Hostinger
+if (typeof(PhusionPassenger) !== 'undefined') {
+    app.listen('passenger');
+} else {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        console.log(`Serveur Node.js démarré sur le port ${PORT}`);
+    });
+}
