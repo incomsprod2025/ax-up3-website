@@ -1,6 +1,34 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const WeekendVip = () => {
+    const [status, setStatus] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('sending');
+        const form = e.target;
+        const data = new FormData(form);
+        
+        try {
+            const response = await fetch('https://formspree.io/f/xlgybpgn', {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                setStatus('success');
+                form.reset();
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        }
+    };
     useEffect(() => {
         const observerOptions = {
             threshold: 0.1,
@@ -49,21 +77,25 @@ const WeekendVip = () => {
                             <h2 style={{ fontSize: '2.5rem', color: 'var(--primary-color)', fontFamily: "'Playfair Display', serif", fontWeight: '700', marginBottom: '0.5rem' }}>Postuler à une Bourse</h2>
                             <p style={{ color: 'var(--text-light)', fontSize: '1.1rem' }}>Candidature pour Master Class de Certification &amp; Professionalisation.</p>
                         </div>
-                        <form id="booking-form" className="grid-form" style={{ gap: '2rem' }}>
+                        <form id="booking-form" className="grid-form" style={{ gap: '2rem' }} onSubmit={handleSubmit}>
                             <div>
                                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: 'var(--text-dark)', fontSize: '0.9rem' }}>Nom complet</label>
-                                <input type="text" style={{ width: '100%', padding: '1.2rem', border: '1px solid #e5e5e5', borderRadius: '4px', background: '#fcfcfc' }} required />
+                                <input type="text" name="nom" style={{ width: '100%', padding: '1.2rem', border: '1px solid #e5e5e5', borderRadius: '4px', background: '#fcfcfc' }} required />
                             </div>
                             <div>
                                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: 'var(--text-dark)', fontSize: '0.9rem' }}>WhatsApp</label>
-                                <input type="tel" style={{ width: '100%', padding: '1.2rem', border: '1px solid #e5e5e5', borderRadius: '4px', background: '#fcfcfc' }} required />
+                                <input type="tel" name="whatsapp" style={{ width: '100%', padding: '1.2rem', border: '1px solid #e5e5e5', borderRadius: '4px', background: '#fcfcfc' }} required />
                             </div>
                             <div style={{ gridColumn: '1 / -1' }}>
                                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: 'var(--text-dark)', fontSize: '0.9rem' }}>Motivation ou Projet</label>
-                                <textarea style={{ width: '100%', padding: '1.2rem', border: '1px solid #e5e5e5', borderRadius: '4px', height: '120px', resize: 'none', background: '#fcfcfc' }}></textarea>
+                                <textarea name="motivation" style={{ width: '100%', padding: '1.2rem', border: '1px solid #e5e5e5', borderRadius: '4px', height: '120px', resize: 'none', background: '#fcfcfc' }} required></textarea>
                             </div>
                             <div style={{ gridColumn: '1 / -1', textAlign: 'center', marginTop: '1rem' }}>
-                                <button type="submit" className="btn btn-primary" style={{ padding: '1.2rem 4rem', fontSize: '1rem' }}>Valider ma candidature</button>
+                                <button type="submit" className="btn btn-primary" style={{ padding: '1.2rem 4rem', fontSize: '1rem' }} disabled={status === 'sending'}>
+                                    {status === 'sending' ? 'Validation en cours...' : 'Valider ma candidature'}
+                                </button>
+                                {status === 'success' && <p style={{ color: 'green', marginTop: '1rem', fontWeight: 'bold' }}>Votre candidature a été envoyée avec succès !</p>}
+                                {status === 'error' && <p style={{ color: 'red', marginTop: '1rem' }}>Une erreur s'est produite. Veuillez réessayer.</p>}
                             </div>
                         </form>
                     </div>
@@ -149,7 +181,7 @@ const WeekendVip = () => {
                             <h3 className="gold-text price-card-title">AX-UP3</h3>
                             <div className="price-amount">100.000 <span className="price-currency">FCFA</span></div>
                             <p className="price-description">Accès standard à la certification et aux modules de base.</p>
-                            <a href="/contact" className="btn btn-outline price-card-btn">Postuler</a>
+                            <a href="https://rpfqvfub.mychariow.shop/prd_domfzkae/checkout?chw_campaign=SCTI8R6UO8" target="_blank" rel="noopener noreferrer" className="btn btn-outline price-card-btn">Postuler</a>
                         </div>
                         {/* Premium */}
                         <div className="price-card price-card-featured fade-up delay-1">
@@ -159,14 +191,14 @@ const WeekendVip = () => {
                             <h3 className="gold-text price-card-title">PREMIUM-UP3</h3>
                             <div className="price-amount">300.000 <span className="price-currency">FCFA</span></div>
                             <p className="price-description">Accompagnement Élite &amp; Distinction personnalisée.</p>
-                            <a href="/contact" className="btn btn-primary price-card-btn">Postuler</a>
+                            <a href="https://rpfqvfub.mychariow.shop/prd_b3kg3kyp/checkout?chw_campaign=SCTI8R6UO8" target="_blank" rel="noopener noreferrer" className="btn btn-primary price-card-btn">Postuler</a>
                         </div>
                         {/* Medium */}
                         <div className="price-card fade-up delay-2">
                             <h3 className="gold-text price-card-title">MEDIUM-UP3</h3>
                             <div className="price-amount">200.000 <span className="price-currency">FCFA</span></div>
                             <p className="price-description">Parcours complet avec networking stratégique renforcé.</p>
-                            <a href="/contact" className="btn btn-outline price-card-btn">Postuler</a>
+                            <a href="https://rpfqvfub.mychariow.shop/prd_2hl9o7yc/checkout?chw_campaign=SCTI8R6UO8" target="_blank" rel="noopener noreferrer" className="btn btn-outline price-card-btn">Postuler</a>
                         </div>
                     </div>
                 </div>

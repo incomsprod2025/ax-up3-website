@@ -1,6 +1,33 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Contact = () => {
+    const [status, setStatus] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('sending');
+        const form = e.target;
+        const data = new FormData(form);
+        
+        try {
+            const response = await fetch('https://formspree.io/f/xgojkldj', {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                setStatus('success');
+                form.reset();
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        }
+    };
     useEffect(() => {
         const observerOptions = {
             threshold: 0.1,
@@ -62,12 +89,16 @@ const Contact = () => {
 
                         <div className="contact-form-container">
                             <h3 style={{ fontSize: '2rem', marginBottom: '3rem', color: 'var(--primary-color)' }}>Proposez votre projet</h3>
-                            <form id="contact-form">
-                                <input type="text" className="premium-input" placeholder="Votre Nom &amp; Prénom" required />
-                                <input type="email" className="premium-input" placeholder="Email Professionnel" required />
-                                <input type="text" className="premium-input" placeholder="Structure / Entreprise" />
-                                <textarea className="premium-input" placeholder="Votre demande ou projet..." style={{ minHeight: '150px', resize: 'none' }} required></textarea>
-                                <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '1.2rem', marginTop: '1rem', border: 'none' }}>Envoyer la demande</button>
+                            <form id="contact-form" onSubmit={handleSubmit}>
+                                <input type="text" name="nom" className="premium-input" placeholder="Votre Nom &amp; Prénom" required />
+                                <input type="email" name="email" className="premium-input" placeholder="Email Professionnel" required />
+                                <input type="text" name="structure" className="premium-input" placeholder="Structure / Entreprise" />
+                                <textarea name="message" className="premium-input" placeholder="Votre demande ou projet..." style={{ minHeight: '150px', resize: 'none' }} required></textarea>
+                                <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '1.2rem', marginTop: '1rem', border: 'none' }} disabled={status === 'sending'}>
+                                    {status === 'sending' ? 'Envoi en cours...' : 'Envoyer la demande'}
+                                </button>
+                                {status === 'success' && <p style={{ color: 'green', marginTop: '1rem', textAlign: 'center', fontWeight: 'bold' }}>Votre message a été envoyé avec succès !</p>}
+                                {status === 'error' && <p style={{ color: 'red', marginTop: '1rem', textAlign: 'center' }}>Une erreur s'est produite. Veuillez réessayer.</p>}
                             </form>
                         </div>
                     </div>

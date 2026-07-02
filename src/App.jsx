@@ -6,6 +6,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import WeekendVip from './pages/WeekendVip';
 import Contact from './pages/Contact';
+import Events from './pages/Events';
 import DummyPage from './pages/DummyPage';
 import './index.css';
 
@@ -19,7 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/weekend-vip" element={<WeekendVip />} />
-          <Route path="/evenements" element={<DummyPage title="Événements" />} />
+          <Route path="/evenements" element={<Events />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />

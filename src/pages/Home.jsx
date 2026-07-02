@@ -77,7 +77,7 @@ const Home = () => {
         <main>
             {/* Hero Section */}
             <section id="accueil" className="hero" style={{ backgroundImage: `linear-gradient(rgba(5, 16, 36, 0.75), rgba(5, 16, 36, 0.75)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop')` }}>
-                <div className="container hero-content">
+                <div className="container hero-content" style={{ paddingTop: '8rem' }}>
                     <span className="gold-text fade-down" style={{ fontWeight: '700', letterSpacing: '5px', textTransform: 'uppercase' }}>L'ADN de la Performance</span>
                     <h1 className="zoom-in" style={{ marginTop: '1.5rem' }}>Réinventer le <span className="gold-text">Leadership</span> Africain</h1>
                     <p className="hero-subtitle fade-right delay-1">AX-UP3 est un levier de performance puissant qui assure la cohésion d'équipe et favorise l'atteinte de vos objectifs stratégiques.</p>

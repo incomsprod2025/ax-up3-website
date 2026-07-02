@@ -221,7 +221,7 @@ img {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 110vh;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -229,6 +229,7 @@ img {
     align-items: center;
     color: white;
     position: relative;
+    padding-bottom: 2rem;
 }
 
 .hero::before {
@@ -252,14 +253,14 @@ img {
 .hero h1 {
     font-size: 5.5rem;
     line-height: 1.1;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .hero-subtitle {
     font-size: 1.3rem;
     color: rgba(255, 255, 255, 0.8);
     max-width: 700px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 1.5rem auto;
 }
 
 .hero-buttons {
